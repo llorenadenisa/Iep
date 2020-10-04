@@ -1,7 +1,7 @@
 # Iep
 
-##Echipa:
+**Echipa:**
 
-*Adam Cristina
+* Adam Cristina
 
-*Bakaity Lorena
+* Bakaity Lorena
