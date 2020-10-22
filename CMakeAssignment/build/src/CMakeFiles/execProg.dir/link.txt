@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/execProg.dir/main.cpp.o  -o execProg   -L/home/lorena/Desktop/FinalIep/Iep/CMakeAssignment/inc 

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lorena/Desktop/FinalIep/Iep/CMakeAssignment/inc/mathFunc.cpp
+iostream
+-
+mathFunc.hpp
+/home/lorena/Desktop/FinalIep/Iep/CMakeAssignment/inc/mathFunc.hpp
+
+/home/lorena/Desktop/FinalIep/Iep/CMakeAssignment/inc/mathFunc.hpp
+
+/home/lorena/Desktop/FinalIep/Iep/CMakeAssignment/src/main.cpp
+iostream
+-
+../inc/mathFunc.cpp
+/home/lorena/Desktop/FinalIep/Iep/CMakeAssignment/inc/mathFunc.cpp
+

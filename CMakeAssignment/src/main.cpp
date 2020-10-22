@@ -1,5 +1,5 @@
 #include<iostream>
-#include "mathFunc.cpp"
+#include "../inc/mathFunc.cpp"
 
 int main()
 {

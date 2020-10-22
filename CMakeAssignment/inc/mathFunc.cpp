@@ -1,5 +1,5 @@
 #include<iostream>
-#include "../inc/mathFunc.hpp"
+#include "mathFunc.hpp"
 
 MathFunc::MathFunc(int n1, int n2)
 {
