@@ -21,8 +21,8 @@ class Student
         }
         void afisareAtribute(){
             std::cout<<"Nume student:"<<this->numeStud<<" an faculta: "<<this->anFaculta<<" materii: ";
-            for(auto i = 0; i < this->materii.size(); i++)
-                std::cout<<this->materii[i]<<" ";
+            for(auto i = materii.begin(); i != materii.end(); ++i)
+                std::cout<<this->*i<<" ";
             std::cout<<"\n";
         }
         private:
