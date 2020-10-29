@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<string>
 
 class Student
 {
@@ -20,8 +21,11 @@ class Student
         }
         void afisareAtribute(){
             std::cout<<"Nume student:"<<this->numeStud<<" an faculta: "<<this->anFaculta<<" materii: ";
-            for(int i = 0; i< this->materii.size(); i++)
+            for(auto i = 0; i < this->materii.size(); i++)
                 std::cout<<this->materii[i]<<" ";
             std::cout<<"\n";
         }
+        private:
+            Student& operator=(const Student&s);
+                   
 };
