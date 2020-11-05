@@ -1,3 +1,6 @@
+#ifndef MATERII_H
+#define MATERII_H
+#endif
 #include<iostream>
 #include<vector>
 
@@ -9,7 +12,6 @@ class  Materii{
         std::string getNumeMaterie(){
             return numeMaterie;
         }
-
     private:
         Materii& operator=(Materii& mat);
 };

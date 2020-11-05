@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<string>
-#include "Materii.cpp"
+#include "Materii.hpp"
 
 class Student
 {
