@@ -1,6 +1,6 @@
 #ifndef MATERII_H
 #define MATERII_H
-#endif
+
 #include<iostream>
 #include<vector>
 
@@ -15,3 +15,4 @@ class  Materii{
     private:
         Materii& operator=(Materii& mat);
 };
+#endif
