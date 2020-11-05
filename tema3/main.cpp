@@ -8,5 +8,9 @@ int main(){
     Student s1("Maria", 2, materii);
     s1.afisareMaterii();
     std::cout<<"\n";
+    Materii mat3("poo");
+    s1.subscribeMaterie(mat3);
+    s1.afisareMaterii();
+    std::cout<<"\n";
     return 0;
 }

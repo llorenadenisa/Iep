@@ -14,5 +14,6 @@ class  Materii{
         }
     private:
         Materii& operator=(Materii& mat);
+        Materii();
 };
 #endif

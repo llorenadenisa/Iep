@@ -8,6 +8,9 @@ using namespace std;
 
 class Student
 {
+    std::string numeStud;
+    int anFaculta;
+    std::vector<Materii>materii;
     public:
         Student(std::string , int , std::vector<Materii>mat);
         virtual ~Student();
@@ -36,13 +39,13 @@ class Student
         void setAn(int an){
             this->anFaculta = an;
         }
-    protected:
-         std::string numeStud;
-         int anFaculta;
-         std::vector<Materii>materii;
     private:
-           Student&& operator=(Student&&s);
+            Student&& operator=(Student&&s);
             Student(Student&& s);
+            Student();
+            Student(int);
+            Student(std::vector<Materii>);
+
 };
 
 #endif

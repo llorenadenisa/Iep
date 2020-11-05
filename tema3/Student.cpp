@@ -4,19 +4,18 @@
  
  Student::Student(Student& stud)
     {
-        numeStud = stud.numeStud;
+        this->numeStud = stud.numeStud;
         copy(stud.materii.begin(), stud.materii.end(), back_inserter(materii));
     }
 
-
 void Student:: subscribeMaterie(Materii&mat ){
-        materii.push_back(mat);
+       this->materii.push_back(mat);
     }
         
 void Student:: afisareMaterii(){
         std::cout<<"Studentul: "<<this->numeStud<<" participa la: ";
         for(int i = 0; i < materii.size(); i++)
-            std::cout<<materii[i].getNumeMaterie()<<" ";
+            std::cout<<this->materii[i].getNumeMaterie()<<" ";
     }
         
 
