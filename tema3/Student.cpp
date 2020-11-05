@@ -1,41 +1,33 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include "Materii.cpp"
 
 class Student
 {
     std::string numeStud;
     int anFaculta;
-    std::vector<std::string>materii;
+    std::vector<Materii>materii;
 
     public:
-        Student(std::string nume, int an, std::vector<std::string>mat):numeStud(nume), anFaculta(an), materii(mat){}
-        ~Student(){
-              delete this;
-        };
+        Student(std::string nume, int an, std::vector<Materii>mat):numeStud(nume), anFaculta(an), materii(mat){}
+        ~Student(){};
         
-        Student& operator=(const Student&s)
+        Student& operator=(Student&s)
         {
             if(&s != this)
             {
-                this->numeStud = s.numeStud;
-                this->materii = s.materii;
+                numeStud.assign (s.numeStud);
+                copy(s.materii.begin(), s.materii.end(), back_inserter(materii));
 
             }
             return *this;
         }
 
-        Student(const Student& stud)
+        Student(Student& stud)
         {
-            numeStud = stud.numeStud;
-            materii = stud.materii;
-        }
-
-        void afisareAtribute(){
-            std::cout<<"Nume student:"<<this->numeStud<<" an faculta: "<<this->anFaculta<<" materii: ";
-            for(auto i = materii.begin(); i != materii.end(); ++i)
-                std::cout<<*i<<" ";
-            std::cout<<"\n";
+            numeStud.assign(stud.numeStud);
+            copy(stud.materii.begin(), stud.materii.end(), back_inserter(materii));
         }
 
         std::string getName(){
@@ -49,9 +41,21 @@ class Student
         void setAn(int an){
             this->anFaculta = an;
         }
+
+        void subscribeMaterie(Materii& mat)
+        {
+            materii.push_back(mat);
+        }
+        
+        void afisareMaterii()
+        {
+            std::cout<<"Studentul: "<<this->numeStud<<" participa la: ";
+            for(int i = 0; i < materii.size(); i++)
+                std::cout<<materii[i].getNumeMaterie()<<" ";
+        }
         
         private:
-            Student&& operator=(const Student&&s);
-             Student(Student&& s);
+            Student&& operator=(Student&&s);
+            Student(Student&& s);
                    
 };
