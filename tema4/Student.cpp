@@ -1,5 +1,5 @@
 #include "Student.hpp"
- Student::Student(std::string nume, int an, std::vector<Materii>mat):numeStud(nume), anFaculta(an), materii(mat){}
+ Student::Student(std::string nume, int an, std::vector<Materii>mat, float med):numeStud(nume), anFaculta(an), materii(mat), medie(med){}
  Student::~Student(){}
  
  Student::Student(Student& stud)

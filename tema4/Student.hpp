@@ -4,6 +4,7 @@
 #include<vector>
 #include<string>
 #include "Materii.hpp"
+#include "Bursa.cpp"
 using namespace std;
 
 class Student
@@ -11,8 +12,10 @@ class Student
     std::string numeStud;
     int anFaculta;
     std::vector<Materii>materii;
+    float medie;
+    Bursa bursa;
     public:
-        Student(std::string , int , std::vector<Materii>mat);
+        Student(std::string , int , std::vector<Materii>mat, float);
         virtual ~Student();
         Student(Student& stud);
         void subscribeMaterie(Materii& mat);
@@ -38,6 +41,16 @@ class Student
         
         void setAn(int an){
             this->anFaculta = an;
+        }
+        Student getStudent(){
+            return *this;
+        }
+        float getMedie(){
+            return medie;
+        }
+        void setBursa(Bursa bursa)
+        {
+            this->bursa = bursa;
         }
     private:
             Student&& operator=(Student&&s);
