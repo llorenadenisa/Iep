@@ -13,7 +13,7 @@ class Student
     int anFaculta;
     std::vector<Materii>materii;
     float medie;
-    Bursa bursa;
+    std::shared_ptr<Bursa> bursa;
     public:
         Student(std::string , int , std::vector<Materii>mat, float);
         virtual ~Student();
@@ -51,6 +51,16 @@ class Student
         void setBursa(Bursa bursa)
         {
             this->bursa = bursa;
+        }
+        //item 15?
+        void afisareValBursaFaraTaxa()
+        {
+            int value = taxCalc(bursa.getValue());
+
+        }
+
+        int taxCalc(const int s){
+            return s-100;
         }
     private:
             Student&& operator=(Student&&s);

@@ -8,13 +8,16 @@ class Bursa
     int  valBursa;
     public:
        // explicit Bursa (std::string nume):numeBursa(nume), valBursa(0){}
-    virtual void setBursa(std::shared_ptr<Bursa> stud){
+    virtual void setBursa(std::shared_ptr<Bursa> bursa){
        
     }
     void setValBursa(int valB){
         this->valBursa = valB;
     }
     
+    int getValue(){
+        return valBursa;
+    }
 
 };
 
@@ -22,9 +25,9 @@ class BursaMerit:Bursa{
 
     using Bursa::Bursa;
 
-    void setBursa(std::shared_ptr<Bursa> stud)
+    void setBursa(std::shared_ptr<Bursa> bursa)
     {
-        stud->setBursa(stud);
+        bursa->setBursa(bursa);
         Bursa::setValBursa(1000);
 
     }
