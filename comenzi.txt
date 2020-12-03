@@ -1,12 +1,12 @@
-we create a device driver(testdriver.c)->we obtain testdriver.ko
+-we create a device driver(testdriver.c)->we obtain testdriver.ko
 
-dtc -I dtb -O dts test.dts imxs6sx-sdb.dtb  //we get a dts file for or test and we add some lines 
+-dtc -I dtb -O dts test.dts imxs6sx-sdb.dtb  //we get a dts file for or test and we add some lines 
 
-dtc -O dtb -I dts imxs6sx-sdb.dtb  test.dts //we compile and get a new version of the dtb file
+-dtc -O dtb -I dts imxs6sx-sdb.dtb  test.dts //we compile and get a new version of the dtb file
 
-we can copy imxs6sx-sdb.dtb to root with scp command where we specify the file that we want to copy, the platform and the path to directory
+-we can copy imxs6sx-sdb.dtb to root with scp command where we specify the file that we want to copy, the platform and the path to directory
 
-reboot
+-reboot
 
-load the module:
-insmod nameOfTest.ko //we can see the output
+-load the module:
+  insmod nameOfTest.ko //we can see the output
