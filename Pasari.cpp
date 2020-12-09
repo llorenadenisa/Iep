@@ -55,6 +55,36 @@ class Papagal : public Pasare
 
 };
 
+class Gaina : public Pasare
+{
+
+};
+
+class Strut : public Pasare
+{
+    static Strut *strut;
+    list<Gaina> gaini_detinute;
+    int contor_gaini;
+ 
+   Strut() {
+      list<Gaina> gaini_detinute = NULL;
+      contor_gaini = 0;
+   }
+
+   public:
+   static Strut *getInstance() {
+      if (!strut)
+      strut = new Strut;
+      return strut;
+   }
+
+   Strut operator+(const Gaina &gaina)
+   {
+       contor_gaini++;
+       gaini_detinute.push_back(gaina);
+   }
+};
+
 int main(void)
 {
     string s0("cuv1");
