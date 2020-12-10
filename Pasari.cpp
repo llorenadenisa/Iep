@@ -59,6 +59,18 @@ class Gaina : public Pasare
         Gaina(int numar,int dist):Pasare(dist){
             numar++;
         }
+         void getDistanta()
+        {
+            cout<<"Distanta parcursa de o gaina este: "<< distanta;
+            cout<<endl;
+
+        }
+
+        void getSunet()
+        {
+            cout<<"Sunetul caracteristic al gainii este cocodac ";
+            cout<<"\n";
+        }
 
 };
 
