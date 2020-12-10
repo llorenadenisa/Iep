@@ -7,9 +7,8 @@ using namespace std;
 class Pasare
 {  
     protected:
-        string sunet;
         int distanta;
-        Pasare(string sunet, int distanta):sunet(sunet),distanta(distanta){}
+        Pasare(int distanta):distanta(distanta){}
     public:
         virtual void getDistanta() = 0; 
         virtual void getSunet() = 0;
@@ -18,11 +17,8 @@ class Pasare
 class Papagal : public Pasare
 {
     list <string> cuvinte_stiute; 
-    string sunetCarac;
-
-
     public:
-        Papagal(string cuv, int dist, string& sunet):Pasare(sunet, dist){
+        Papagal(string cuv, int dist):Pasare(dist){
             cuvinte_stiute.push_back(cuv);
         }
 
@@ -49,7 +45,7 @@ class Papagal : public Pasare
 
         void getSunet()
         {
-            cout<<"Sunetul caracteristic al papagalului este: "<< sunet;
+            cout<<"Sunetul caracteristic al papagalului este cricri ";
             cout<<"\n";
         }
 
@@ -62,26 +58,25 @@ class Gaina : public Pasare
 
 class Strut : public Pasare
 {
-    static Strut *strut;
-    list<Gaina> gaini_detinute;
     int contor_gaini;
  
    Strut() {
-      list<Gaina> gaini_detinute = NULL;
       contor_gaini = 0;
    }
 
    public:
-   static Strut *getInstance() {
-      if (!strut)
-      strut = new Strut;
-      return strut;
+    static Strut *strut;
+    static Strut *getInstance() {  
+        if (!strut)
+        strut = new Strut;
+        return strut;
    }
 
    Strut operator+(const Gaina &gaina)
    {
        contor_gaini++;
-       gaini_detinute.push_back(gaina);
+       Gaina::numar--;
+       return *this
    }
 };
 
@@ -89,9 +84,8 @@ int main(void)
 {
     string s0("cuv1");
     string s1("cuv2");
-    string sunet1("aaa");
 
-    Papagal papagal1(s0, 20, sunet1);
+    Papagal papagal1(s0, 20);
     papagal1.adaugaCuvant(s1);
     papagal1.afiseazaCuvinteStiute();
     papagal1.getSunet();
