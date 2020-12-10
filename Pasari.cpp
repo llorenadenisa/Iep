@@ -10,8 +10,8 @@ class Pasare
         int distanta;
         Pasare(int distanta):distanta(distanta){}
     public:
-        virtual void getDistanta() = 0; 
-        virtual void getSunet() = 0;
+        virtual void getDistanta(); 
+        virtual void getSunet();
 };
 
 class Papagal : public Pasare
@@ -53,6 +53,12 @@ class Papagal : public Pasare
 
 class Gaina : public Pasare
 {
+    public: static int numar;
+
+    public:
+        Gaina(int numar,int dist):Pasare(dist){
+            numar++;
+        }
 
 };
 
@@ -60,7 +66,7 @@ class Strut : public Pasare
 {
     int contor_gaini;
  
-   Strut() {
+   Strut(int dist):Pasare(dist){
       contor_gaini = 0;
    }
 
@@ -68,7 +74,7 @@ class Strut : public Pasare
     static Strut *strut;
     static Strut *getInstance() {  
         if (!strut)
-        strut = new Strut;
+        strut = new Strut(0);
         return strut;
    }
 
@@ -76,7 +82,7 @@ class Strut : public Pasare
    {
        contor_gaini++;
        Gaina::numar--;
-       return *this
+       return *this;
    }
 };
 
