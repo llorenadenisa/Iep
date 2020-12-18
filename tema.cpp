@@ -14,11 +14,17 @@ using namespace std;
  class Cerc{
      int raza;
      int x,y;
-     public:
-        Cerc(int raza, int x,int y){
-            this->raza=raza;
-            this->x=x;
-            this->y=y;
+     Cerc(int raza, int x,int y){
+         this->raza=raza;
+         this->x=x;
+         this->y=y;
+     }
+      public:
+        static Cerc* instanta;
+        static Cerc& getInstance(int raza, int x, int y)
+        {
+            static Cerc instanta(raza, x, y);
+            return instanta;
         }
         int getRaza(){return this->raza;}
         int getCentruX(){return this->x;}
@@ -28,8 +34,6 @@ using namespace std;
             cout<<"Cercul de raza "<<raza<<" si centru "<<x<<","<<y;
             cout<<endl;
         }
-
-
  };
 class Figura
  {
@@ -74,10 +78,8 @@ void seAflaPeCerc(Punct &x,Cerc c)
     if(((x->getX()-c.getCentruX())*(x->getX()-c.getCentruX()) + (x->getY()-c.getCentruY())*(x->getY()-c.getCentruY()) ) == c.getRaza()^2)
     {
         cout<<"se afla pe cerc\n";
-    }else{cout<<"nu se alfa\n";}  
-    
+    }else{cout<<"nu se alfa\n";}      
 }
-
 
 class Patrat : public Figura{
       Punct* tab[4];
@@ -129,7 +131,6 @@ class Dreptunghi : public Figura
             double latime=distantaDintrDouaPuncte(a,c);
             return 2*(lungime+latime);
         }
-
 };
 
 class Triungi : public Figura
@@ -180,14 +181,14 @@ int main()
     cout<<"\nperimetrul dreptungiului este: "<<d.perimetru();
     d.schimbaPunct(cv,cn);
     cout<<"\nperimetrul dreptungiului este: "<<d.perimetru();
-    cout<<"-------------";
+    cout<<"\n-------------";
     Triungi t(3);
     t.adaugaTriunghi(new Punct(0,0));
     t.adaugaTriunghi(new Punct(3,0));
     t.adaugaTriunghi(new Punct(0,4));
     cout<<"\nperimetrul triunghilui este: "<<t.perimetru();
     cout<<endl;
-    Cerc c(1,0,0);
+    Cerc c = c.getInstance(1,0,0);
     c.afisareCerc();
     Punct *pp=new Punct(1,1);
     seAflaPeCerc(pp,c);
